@@ -10,4 +10,17 @@ violator_songs = {
     'Clean': 5.83
 }
 
-# TODO здесь писать код
+user_count = int(input('Сколько песен выбрать? '))
+summ = 0
+for count in range(user_count):
+    name_song = input(f'Название {count + 1} песни: ')
+    if name_song in violator_songs.keys():
+        summ += violator_songs[name_song]
+    else:
+        print('Такой песни нет')
+        break
+
+print(f'Общее время звучания песен: {summ} минуты')
+
+
+

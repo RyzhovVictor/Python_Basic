@@ -20,12 +20,12 @@ students = {
 }
 
 
-def f(dict):
+def accept_arg(dict_students):
     lst = []
     string = ''
-    for i in dict:
-        lst += (dict[i]['interests'])
-        string += dict[i]['surname']
+    for i in dict_students:
+        lst += (dict_students[i]['interests'])
+        string += dict_students[i]['surname']
     cnt = 0
     for s in string:
         cnt += 1
@@ -36,9 +36,10 @@ pairs = []
 for i in students:
     pairs += (i, students[i]['age'])
 
+my_lst = accept_arg(students)[0]
+l = accept_arg(students)[1]
 
-my_lst = f(students)[0]
-l = f(students)[1]
-print(my_lst, l)
+print(f'Список пар "ID студента - возраст": {pairs}')
+print(f'Полный список интересов всех студентов: {my_lst}')
+print(f'Общая длина всех фамилий студентов: {l}')
 
-# TODO исправить код

@@ -20,25 +20,41 @@ students = {
 }
 
 
-def f(dict):
-    lst = []
-    string = ''
-    for i in dict:
-        lst += (dict[i]['interests'])
-        string += dict[i]['surname']
-    cnt = 0
-    for s in string:
-        cnt += 1
-    return lst, cnt
+def accept_arg(dict_students):
+    id_and_age = [(id_student, age_student['age'])
+                  for id_student, age_student in dict_students.items()]
+
+    interest_student = {interests
+                        for in_dict in dict_students.values()
+                        for interests in in_dict['interests']}
+
+    all_length = [values
+                  for in_dict in dict_students.values()
+                  for length, values in enumerate(in_dict['surname'])]
+
+    print(f'Список пар "ID студента - возраст": {id_and_age}')
+    print(f'Полный список интересов всех студентов: {interest_student}')
+    print(f'Общая длина всех фамилий студентов: {len(all_length)}')
 
 
-pairs = []
-for i in students:
-    pairs += (i, students[i]['age'])
+accept_arg(students)
 
 
-my_lst = f(students)[0]
-l = f(students)[1]
-print(my_lst, l)
-
-# TODO исправить код
+# def accept_arg(dict_students):
+#     lst = []
+#     string = ''
+#     for i in dict_students:
+#         lst += (dict_students[i]['interests'])
+#         string += dict_students[i]['surname']
+#     cnt = 0
+#     for s in string:
+#         cnt += 1
+#     return lst, cnt
+#
+#
+# pairs = []
+# for i in students:
+#     pairs += (i, students[i]['age'])
+#
+# my_lst = accept_arg(students)[0]
+# l = accept_arg(students)[1]

@@ -1,5 +1,5 @@
 total_quan_str_protocols = int(input('Сколько записей вносится в протокол? '))
-protocols = {}
+protocols = {}  # type: ignore
 
 
 def score_key(a):

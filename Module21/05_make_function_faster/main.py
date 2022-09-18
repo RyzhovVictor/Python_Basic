@@ -1,9 +1,15 @@
 def calculating_math_func(data):
-    result = 1
-    for index in range(1, data + 1):
-        result *= index
+    factorials = {1: 1}
+    if data in factorials:
+        result = factorials[data]
+    else:
+        result = max(factorials.values())
+        for index in range(max(factorials.keys()) + 1, data + 1):
+            result *= index
+            factorials[index] = result
     result /= data ** 3
     result = result ** 10
     return result
 
-# TODO оптимизировать функцию
+
+print(calculating_math_func(20))

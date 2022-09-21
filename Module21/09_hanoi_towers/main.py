@@ -1,5 +1,4 @@
-# TODO здесь писать код
-ser_count = int(input('Введите количество дисков: '))
+user_count = int(input('Введите количество дисков: '))
 
 
 def move(n, x, y):

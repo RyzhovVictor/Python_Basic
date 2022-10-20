@@ -13,27 +13,23 @@ def f2(x, y):
     return y / x
 
 
-try:
-    file = open('coordinates.txt', 'r')
+line_number = 0
+my_list = []
+with open('coordinates.txt', 'r', encoding='utf-8') as file:
     for line in file:
-        nums_list = line.split()
-        res1 = f(int(nums_list[0]), int(nums_list[1]))
+        line_number += 1
+        num_list = line.split()
         try:
-            res2 = f2(int(nums_list[0]), int(nums_list[1]))
+            res1 = f(int(num_list[0]), int(num_list[1]))
             try:
+                res2 = f2(int(num_list[0]), int(num_list[1]))
                 number = random.randint(0, 100)
-                file_2 = open('result.txt', 'w')
-                my_list = sorted([res1, res2, number])
-                file_2.write(' '.join(my_list))
+                my_list.append([number, res1, res2])
+                with open('result.txt', 'w', encoding='utf-8') as save_file:
+                    for line in save_file:
+                        save_file.write(my_list)
             except Exception:
                 print("Что-то пошло не так")
         except Exception:
-            print("Что-то пошло не так со второй функцией")
-        finally:
-            file.close()
-            file_2.close()
-except Exception:
-    print("Что-то пошло не так с первой функцией")
+            print(f'Строка {line_number} содержит не верные данные')
 
-
-# TODO отредактировать и исправить программу

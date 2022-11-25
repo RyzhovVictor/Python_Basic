@@ -9,15 +9,15 @@ class Circle:
 
     def area_circle(self):
         find_area_circle = M.pi * self.r * self.r
-        print(f'Площадь заданного круга: {find_area_circle}')
+        return f'Площадь заданного круга: {find_area_circle}'
 
     def perimetr_circle(self):
         find_perimetr_circle = 2 * M.pi * self.r
-        print(f'Периметр заданного круга: {find_perimetr_circle}')
+        return f'Периметр заданного круга: {find_perimetr_circle}'
 
     def increase(self, K):
         K += self.r
-        print(f'Радиус круга увелился на {self.r}, и теперь он состовляет {K}')
+        return f'Радиус круга увелился на {self.r}, и теперь он состовляет {K}'
 
     def is_intersect(self, other):
         return (self.x - other.x) ** 2 + (self.y - other.y) ** 2 <= (self.r + other.r) ** 2
